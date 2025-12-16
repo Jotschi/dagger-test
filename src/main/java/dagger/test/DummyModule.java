@@ -1,18 +1,18 @@
 package dagger.test;
 
-import java.awt.Point;
+import java.awt.Button;
 
 import javax.inject.Singleton;
 
-import dagger.Provides;
 import dagger.Module;
+import dagger.Provides;
 
 @Module
 public class DummyModule {
 
-    @Singleton
-    @Provides
-    public Point point() {
-        return new Point(42, 42);
-    }
+	@Singleton
+	@Provides
+	public Button button() {
+		return new Button("hello");
+	}
 }

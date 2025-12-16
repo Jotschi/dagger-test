@@ -2,7 +2,6 @@ package dagger.test;
 
 import java.awt.Button;
 import java.awt.Point;
-import java.awt.Window;
 
 import javax.inject.Singleton;
 
@@ -10,8 +9,8 @@ import dagger.BindsInstance;
 import dagger.Component;
 
 @Singleton
-@Component(modules = { DummyModule.class, BindModule.class })
-public interface DummyComponent {
+@Component(modules = { DummyModule.class})
+public interface DummyTestComponent {
 
 	@Component.Builder
 	interface Builder {
@@ -24,13 +23,11 @@ public interface DummyComponent {
 		 * 
 		 * @return
 		 */
-		DummyComponent build();
+		DummyTestComponent build();
 
 	}
-
-	Window window();
 	
 	Button button();
 	
-	Point point();
+    Point point();
 }

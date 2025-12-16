@@ -1,0 +1,53 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>dagger.test</groupId>
+	<artifactId>dagger-test</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<dagger.version>2.57.2</dagger.version>
+		<maven.compiler.release>21</maven.compiler.release>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<compiler-plugin.version>3.14.1</compiler-plugin.version>
+	</properties>
+
+
+	<dependencies>
+		<!-- DI -->
+		<dependency>
+			<groupId>com.google.dagger</groupId>
+			<artifactId>dagger</artifactId>
+			<version>${dagger.version}</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${compiler-plugin.version}</version>
+				<configuration>
+					<release>21</release>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>com.google.dagger</groupId>
+							<artifactId>dagger-compiler</artifactId>
+							<version>${dagger.version}</version>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>com.google.dagger</groupId>
+						<artifactId>dagger-compiler</artifactId>
+						<version>${dagger.version}</version>
+						<optional>true</optional>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
